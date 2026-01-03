@@ -1,0 +1,47 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build project
+        run: npm run build
+      
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p 65002 185.201.10.97 >> ~/.ssh/known_hosts 2>/dev/null || true
+      
+      - name: Deploy to Hostinger via SCP
+        run: |
+          scp -P 65002 -r dist/* u118534042@185.201.10.97:public_html/
+      
+      - name: Verify deployment
+        run: |
+          ssh -p 65002 u118534042@185.201.10.97 "ls -la public_html/index.html"
+      
+      - name: Deployment Success
+        run: |
+          echo "✓ Deployment successful!"
+          echo "Website: https://emavory.com"
