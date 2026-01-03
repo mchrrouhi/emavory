@@ -17,3 +17,12 @@
     Header set Cache-Control "public, max-age=604800"
   </If>
 </IfModule>
+
+# Fix MIME types for JavaScript modules
+<FilesMatch "\.js$">
+  Header set Content-Type "application/javascript; charset=utf-8"
+</FilesMatch>
+
+<FilesMatch "\.css$">
+  Header set Content-Type "text/css; charset=utf-8"
+</FilesMatch>
