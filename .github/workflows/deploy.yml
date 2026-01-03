@@ -32,4 +32,5 @@ jobs:
       
       - name: Deploy via SCP
         run: |
-          scp -P 65002 -r dist/* u118534042@185.201.10.97:public_html/ 
+          cd dist
+          scp -P 65002 -r .htaccess * u118534042@185.201.10.97:public_html/ 
