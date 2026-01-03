@@ -127,7 +127,7 @@ export default function Test2Page() {
             <img 
               className="w-full h-auto object-contain rounded-xl shadow-lg border-2 border-pink-100" 
               alt="Crème SUMIFUN Éliminatrice d'Odeurs Intimes - 100% Naturel"
-              src="https://via.placeholder.com/448x400?text=SUMIFUN+Product+Image"
+              src="https://i.ibb.co/xSqN9yL/sumifun-main.jpg"
               loading="eager"
             />
             {/* Social Proof Badge */}
@@ -241,7 +241,7 @@ export default function Test2Page() {
           <img 
             className="w-full h-auto rounded-xl shadow-lg border border-pink-100 mb-4" 
             alt="Bénéfices SUMIFUN - Avant et Après"
-            src="https://via.placeholder.com/448x300?text=Benefits+Before+After"
+            src="https://i.ibb.co/7YqK9Jm/sumifun-benefits.jpg"
             loading="lazy"
           />
         </div>
@@ -504,7 +504,7 @@ export default function Test2Page() {
             <div className="p-4">
               <OrderForm 
                 productTitle="Crème SUMIFUN Éliminatrice d'Odeurs Intimes" 
-                productImage="https://via.placeholder.com/448x400?text=SUMIFUN+Product"
+                productImage="https://i.ibb.co/xSqN9yL/sumifun-main.jpg"
                 offers={sumifunOffers}
                 onSuccess={() => setIsModalOpen(false)}
                 extraHiddenFields={{
