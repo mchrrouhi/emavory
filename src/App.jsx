@@ -8,6 +8,7 @@ import Product2Page from '@/pages/Product2Page';
 import SavonaPage from '@/pages/SavonaPage';
 import TShirtPage from '@/pages/TShirtPage';
 import Test1Page from '@/pages/Test1Page';
+import Test2Page from '@/pages/Test2Page';
 import CtaSection from '@/components/CtaSection';
 import { Toaster } from '@/components/ui/toaster';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
@@ -165,6 +166,7 @@ function App() {
         <Route path="/savona" element={<SavonaPage />} />
         <Route path="/tshirt" element={<TShirtPage />} />
         <Route path="/test1" element={<Test1Page />} />
+        <Route path="/test2" element={<Test2Page />} />
         <Route path="/thanks" element={<ThankYouPage />} />
       </Routes>
     </Router>
